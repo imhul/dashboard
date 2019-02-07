@@ -1,0 +1,146 @@
+$color-text: #555 !default;
+$color-link: #2f4cb4 !default;
+$font-text: 16px / 1.2 'Arial', sans-serif;
+
+html,
+body {
+    height: 100%;
+    line-height: 1.15; 
+	-ms-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%; 
+}
+
+body {
+	color: $color-text;
+	font: $font-text;
+	margin: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+a {
+	background-color: transparent; 
+	-webkit-text-decoration-skip: objects; 
+	color: $color-link;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.LayoutMain {
+    .ant-layout.ant-layout-has-sider {
+        height: calc(100vh - 64px);
+    }
+    .MainHeader {
+        background-color: #fff;
+    }
+    .LeftSider {
+        background-color: #e1e1e1;
+    }
+    .Dashboard {
+        position: relative;
+        figure {
+            position: absolute;
+            margin: 0;
+        }
+    }
+    .circle {
+        width: 100px;
+        height: 100px;
+        background: #d500f9;
+        border-radius: 50%;
+		margin: 20px auto;
+    }
+    .square {
+		width: 100px;
+        height: 100px;
+        background: #ef6c00;
+		margin: 20px auto;
+	}
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #2979ff;
+		margin: 20px auto;
+    }
+    .star {
+        height: 0;
+        width: 0;
+        position: relative;
+        border-right: 50px solid transparent;
+        border-bottom: 35px solid #1de9b6;
+        border-left: 50px solid transparent;
+        transform: rotate(35deg);
+		margin: 50px auto;
+        &:before,
+        &:after {
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+        }
+        &:before {
+            top: -26px;
+            left: -32px;
+            border-bottom: 40px solid #1de9b6;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            transform: rotate(-35deg);
+        }
+        &:after {
+            top: 2px;
+            left: -53px;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid #1de9b6;
+            border-left: 50px solid transparent;
+            transform: rotate(-70deg);
+        }
+    }
+    .heart {
+        position: relative;
+        width: 100px;
+        height: 80px;
+		margin: 20px auto;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #EE4156;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        &:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+    }
+}
